@@ -1,0 +1,314 @@
+Prefix sum Questions
+
+## 🟢 Level 1 — Basic Prefix Sum
+
+### 1. Build the Prefix Sum Array
+
+Given:
+
+```text
+arr = [2, 4, 1, 5, 3]
+```
+
+Create the prefix sum array.
+
+**Expected:**
+
+```text
+[?, ?, ?, ?, ?]
+```
+
+---
+
+### 2. Build Prefix Sum
+
+Given:
+
+```text
+arr = [5, 2, 7, 3, 6]
+```
+
+Create the prefix sum array.
+
+---
+
+### 3. Prefix Sum With Extra Zero
+
+Given:
+
+```text
+arr = [3, 1, 4, 2]
+```
+
+Create the prefix array using the **extra-zero approach**:
+
+```text
+prefix = [0, ?, ?, ?, ?]
+```
+
+---
+
+## 🟡 Level 2 — Range Sum
+
+For these questions, use:
+
+```text
+sum(L, R) = prefix[R + 1] - prefix[L]
+```
+
+### 4. Range Sum
+
+Given:
+
+```text
+arr = [2, 4, 1, 5, 3]
+```
+
+Find the sum from index `1` to `3`.
+
+```text
+L = 1
+R = 3
+```
+
+Expected answer:
+
+```text
+10
+```
+
+Try calculating it using the prefix sum formula, not by directly adding the elements.
+
+---
+
+### 5. Multiple Range Queries
+
+Given:
+
+```text
+arr = [5, 3, 8, 2, 7, 4]
+```
+
+Answer these queries:
+
+```text
+Query 1: L = 1, R = 3
+Query 2: L = 2, R = 5
+Query 3: L = 0, R = 4
+```
+
+Try to answer **all three using one prefix array**.
+
+---
+
+### 6. Range Sum in Java
+
+Write a Java program that:
+
+1. Takes an array.
+2. Creates a prefix sum array.
+3. Takes `L` and `R`.
+4. Prints the sum from `L` to `R`.
+
+Example:
+
+```text
+Input:
+arr = [10, 20, 30, 40, 50]
+L = 1
+R = 3
+
+Output:
+90
+```
+
+---
+
+## 🟠 Level 3 — Think a Little More
+
+### 7. Count Positive Numbers in a Range
+
+Given:
+
+```text
+arr = [-2, 5, -1, 7, 3, -4, 6]
+```
+
+Create a prefix-based array that helps you answer:
+
+> How many positive numbers are present between index `1` and `5`?
+
+Expected answer:
+
+```text
+3
+```
+
+**Hint:** Instead of storing sums, store a cumulative **count**.
+
+---
+
+### 8. Count Even Numbers in a Range
+
+Given:
+
+```text
+arr = [2, 5, 8, 7, 4, 6, 9]
+```
+
+Using a prefix-based approach, find:
+
+```text
+Number of even elements from index 1 to 5
+```
+
+Expected answer:
+
+```text
+3
+```
+
+---
+
+### 9. Find Range With Given Sum
+
+Given:
+
+```text
+arr = [2, 4, 1, 3, 5]
+```
+
+Find the sum of the range:
+
+```text
+L = 1
+R = 3
+```
+
+Then check whether the calculated sum is equal to:
+
+```text
+Target = 8
+```
+
+Output:
+
+```text
+Yes
+```
+
+---
+
+## 🔴 Level 4 — Placement-Oriented
+
+### 10. Multiple Queries
+
+Given:
+
+```text
+arr = [1, 2, 3, 4, 5, 6, 7, 8]
+```
+
+You have `4` queries:
+
+```text
+(0, 3)
+(2, 5)
+(1, 6)
+(4, 7)
+```
+
+Find the sum for every query.
+
+**Important:** Build the prefix array **only once**.
+
+---
+
+### 11. Maximum Range Sum
+
+Given:
+
+```text
+arr = [2, -1, 4, -2, 3]
+```
+
+Find the maximum sum among these ranges:
+
+```text
+[0, 2]
+[1, 3]
+[2, 4]
+[0, 4]
+```
+
+Use prefix sums to calculate each range efficiently.
+
+---
+
+### 12. Prefix Sum + HashMap 🔥
+
+This is one of the most important patterns.
+
+Given:
+
+```text
+arr = [1, 2, 3, -2, 5]
+target = 3
+```
+
+Find the **number of subarrays whose sum is equal to `target`**.
+
+For example:
+
+```text
+[1, 2]       → 3
+[3]          → 3
+[5, -2]      → 3
+```
+
+So the answer is:
+
+```text
+3
+```
+
+This introduces the important:
+
+```text
+Prefix Sum + HashMap
+```
+
+pattern.
+
+---
+
+## 🎯 Recommended Order
+
+Since you're learning this from scratch, I recommend we solve them in this exact order:
+
+```text
+Q1 → Build Prefix Sum
+ ↓
+Q2 → Build Prefix Sum
+ ↓
+Q3 → Extra-Zero Prefix Sum
+ ↓
+Q4 → Single Range Sum
+ ↓
+Q5 → Multiple Range Queries
+ ↓
+Q6 → Java Implementation
+ ↓
+Q7 → Prefix Count
+ ↓
+Q8 → Prefix Count
+ ↓
+Q9 → Range Condition
+ ↓
+Q10 → Multiple Queries
+ ↓
+Q11 → Maximum Range Sum
+ ↓
+Q12 → Prefix Sum + HashMap
+```
+
